@@ -179,8 +179,8 @@ textarea {
 
 
 .my-section {
-    margin-top: 60px;
-    margin-bottom: 60px;
+    margin-top: 70px;
+    margin-bottom: 70px;
 
     @media (max-width: 991.98px) {
         margin-top: 40px;
@@ -873,4 +873,16 @@ textarea {
         }
     }
   
+}
+
+/*** ELECTRONIC LITIGATION ***/
+.electronic-litigation {
+    .img-wrap {
+        @media (min-width: 576px) {
+            height: 400px;
+        }
+        @media (max-width: 575.98px) {
+            height: 40vh;
+        }
+    }
 }
