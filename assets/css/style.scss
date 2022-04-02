@@ -38,6 +38,14 @@ $end: right;
     color: $white;
 }
 
+.color-gray-dark {
+    color: $gray-dark;
+}
+
+.color-gray {
+    color: $gray;
+}
+
 html,
 body {
     scroll-behavior: auto !important;
@@ -75,6 +83,10 @@ body {
     font-family: $fontTitle;
 }
 
+.font-bold {
+    font-weight: 700;
+}
+
 /*** Buttons ***/
 button,
 input,
@@ -104,11 +116,58 @@ textarea {
             color: $white;
         }
     }
+
+    &.blue {
+        background-color: $blue;
+
+        &:hover {
+            background-color: $red;
+            color: $white;
+        }
+    }
 }
 
+
+.btn_arrow {
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 400;
+    text-decoration: none;
+    transition: $transitionFast;
+    @extend .small-description;
+    i {
+        transition: $transitionFast;
+        font-size: 22px;
+        margin-#{$start}: 0.15rem;
+        color: $red;
+    }
+    &.red {
+        color: $red;
+
+        &:hover {
+            color: $blue;
+            i {
+                color: $blue;
+                margin-#{$start}: 0.5rem;
+            }
+        }
+    }
+}
 /*** Container ***/
 .container-layout {
     width: 92%;
+    margin: auto;
+
+    @media (max-width: 575.98px) {
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
+
+.container-samll {
+    width: 60%;
     margin: auto;
 
     @media (max-width: 575.98px) {
@@ -174,6 +233,50 @@ textarea {
     }
 }
 
+.medium-title {
+    font-weight: 500;
+    @media (min-width: 1600px) {
+        font-size: 28px;
+    }
+
+    @media (min-width: 1200px) and (max-width: 1599.98px) {
+        font-size: 26px;
+    }
+
+
+    @media (min-width: 576px) and (max-width: 1199.98px) {
+        font-size: 22px;
+    }
+
+
+    @media (max-width: 575.98px) {
+        font-size: 20px;
+    }
+}
+
+.small-title {
+    font-weight: 700;
+    @media (min-width: 1600px) {
+        font-size: 22px;
+    }
+
+    @media (min-width: 1200px) and (max-width: 1599.98px) {
+        font-size: 20px;
+    }
+
+
+    @media (min-width: 576px) and (max-width: 1199.98px) {
+        font-size: 16px;
+    }
+
+
+    @media (max-width: 575.98px) {
+        font-size: 14px;
+    }
+}
+
+
+
 .title-two-lines {
     @media (min-width: 1600px) {
         width: 50%;
@@ -195,6 +298,27 @@ textarea {
     }
 }
 
+.small-description {
+    @media (min-width: 1600px) {
+        font-size: 15px;
+    }
+
+    @media (min-width: 1200px) and (max-width: 1599.98px) {
+        font-size: 13px;
+    }
+
+
+    @media (min-width: 576px) and (max-width: 1199.98px) {
+        font-size: 12px;
+    }
+
+
+    @media (max-width: 575.98px) {
+        font-size: 10px;
+    }
+        
+}
+
 .img-fit {
     width: 100%;
     height: 100%;
@@ -211,8 +335,25 @@ textarea {
     }
 }
 
+.hvr-img-wrap {
+    .hvr-img {
+        transition: $transitionSlow;
+        transform: scale3d(1,1,1);
+    }
+    &:hover {
+        .hvr-img {
+            transform: scale3d(1.1,1.1,1.1);
+        }
+    }
+}
+
 .border_radius {
     border-radius: 20px;
+    overflow: hidden;
+}
+
+.border_radius_sm {
+    border-radius: 10px;
     overflow: hidden;
 }
 
@@ -619,4 +760,117 @@ textarea {
 /*** LATEST NEWS ***/
 .last-news {
     background-color: $white;
+    .start-side {
+        .img-wrap {
+            height: 320px;
+            overflow: hidden;
+            @media (max-width: 575.98px) {
+                height: 200px;
+            }
+        }
+        p {
+            margin-bottom: 0.2rem;
+        }
+    }
+
+    .end-side {
+        .img-wrap {
+            height: 150px;
+            overflow: hidden;
+            @media (max-width: 575.98px) {
+                height: 200px;
+            }
+        }
+        p {
+            margin-bottom: 0.2rem;
+        }
+    }
+
+}
+
+/***  GEOGRAPHIC SCOPE ***/
+.geographic-scope {
+    .list-geographic-scope {
+        ul {
+            list-style: none;
+            li {
+                color: $blue;
+                text-decoration: underline;
+                text-transform: capitalize;
+                @extend .medium-title;
+            }
+        }
+    }
+}
+
+/*** PARTNERS ***/
+.partners {
+    .partners-video {
+      
+        position: relative;
+        @media (min-width: 576px) {
+            height: 400px;
+        }
+        @media (max-width: 575.98px) {
+            height: 205px;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color: $blue, $alpha: 0.6);
+        }
+
+        .info {
+            position: relative;
+            z-index: 1;
+
+            i {
+                @extend .main-title;
+                color: $white;
+            }
+        }
+    }
+    .partner-logo {
+        width: 190px;
+        height: 110px;
+        background-color: $white;
+    }
+}
+
+/*** Video Modal ***/
+.media-videos {
+    cursor: pointer;
+}
+.videoModal {
+    .modal-header {
+        border: none;
+        .btn-close {
+            filter: brightness(0) invert(1);
+            opacity: 1;
+        }
+    }
+    .modal-dialog {
+        @media (min-width: 576px) {
+            max-width: 80vw;
+        }
+    }
+    .modal-content {
+        background: transparent;
+    border: none;
+    border-radius: 0;
+        .modal-body {
+            @media (min-width: 576px) {
+                max-width: 80vw;
+                height: 80vh;
+            }
+            @media (max-width: 575.98px) {
+                height: 40vh;
+            }
+        }
+    }
+  
 }
