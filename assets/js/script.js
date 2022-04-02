@@ -44,7 +44,7 @@ $(window).on("load", function () {
       );
     });
   }
-
+  // Video Modek
   if ($(".media-videos").length) {
     function getId(url) {
       const regExp =
@@ -71,5 +71,49 @@ $(window).on("load", function () {
     $(".videoModal").on("hidden.bs.modal", function (e) {
       $(".videoModal iframe").attr("src", "");
     });
+  }
+
+  // Counter {
+  if ($(".counter").length) {
+    let nums = document.querySelectorAll(".counter .number");
+    let sectionCount = document.querySelector(".counter");
+    let started = false;
+    window.onscroll = function () {
+      // console.log("scrollY", window.scrollY);
+      // console.log("sectionCount.offsetTop", sectionCount.offsetTop);
+      if (window.outerWidth >= 768) {
+        // console.log("DeskTop");
+        if (window.scrollY >= sectionCount.offsetTop - navBarHeight - 400) {
+          if (!started) {
+            nums.forEach((num) => {
+              startCount(num);
+              // console.log("num", num);
+            });
+          }
+          started = true;
+        }
+      } else {
+        // console.log("Mobile");
+        if (window.scrollY >= sectionCount.offsetTop - navBarHeight) {
+          if (!started) {
+            nums.forEach((num) => {
+              startCount(num);
+              // console.log("num", num);
+            });
+          }
+          started = true;
+        }
+      }
+    };
+
+    function startCount(el) {
+      let goal = el.dataset.goal;
+      let count = setInterval(() => {
+        el.textContent++;
+        if (el.textContent == goal) {
+          clearInterval(count);
+        }
+      }, 2000 / goal);
+    }
   }
 });
