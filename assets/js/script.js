@@ -1,12 +1,15 @@
 $(window).on("load", function () {
-  // if ($(".navbar-fixed").length) {
   const navBarHeight = $(".navbar-fixed").innerHeight();
+  // if ($(".navbar-fixed").length) {
   $(".padding-top").css({
     "padding-top": navBarHeight + "px",
   });
   // console.log("navBarHeight", navBarHeight);
   // }
-
+  $(".navbar .navbar-toggler").on("click", function () {
+    $("body").toggleClass("open-menu");
+    console.log("navBarHeight", navBarHeight);
+  });
   if ($(".hero").length) {
     var swiper = new Swiper(".hero-swiper", {
       loop: true,

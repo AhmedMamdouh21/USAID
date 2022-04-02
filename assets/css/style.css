@@ -60,6 +60,36 @@ body {
   }
 }
 
+@media (max-width: 991.98px) {
+  body .navbar .navbar-collapse {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+body .navbar .navbar-toggler .icon-close {
+  display: none;
+}
+
+body .navbar .navbar-toggler .icon-open {
+  display: block;
+}
+
+@media (max-width: 991.98px) {
+  body.open-menu .navbar .navbar-collapse {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+body.open-menu .navbar .navbar-toggler .icon-open {
+  display: none;
+}
+
+body.open-menu .navbar .navbar-toggler .icon-close {
+  display: block;
+}
+
 /*** Fonts ***/
 .font-title, .btn_main {
   font-family: "Lora", serif;
@@ -412,8 +442,10 @@ textarea {
   max-width: 140px;
 }
 
-.navbar .navbar-nav {
-  border-bottom: 2px solid #002F6C1A;
+@media (min-width: 992px) {
+  .navbar .navbar-nav {
+    border-bottom: 2px solid #002F6C1A;
+  }
 }
 
 .navbar .navbar-nav .nav-item:first-child .nav-link {
@@ -447,9 +479,9 @@ textarea {
   font-size: 14px;
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 991.98px) {
   .navbar .navbar-nav .nav-item .nav-link {
-    font-size: 12px;
+    text-align: center;
   }
 }
 
@@ -480,19 +512,68 @@ textarea {
   opacity: 1;
 }
 
-.navbar .container-search-box {
-  width: 80px;
+@media (max-width: 991.98px) {
+  .navbar .navbar-nav .nav-item .nav-link.active::after {
+    display: none;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar .navbar-collapse {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    z-index: -1;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.navbar .navbar-toggler .bi {
+  color: #002F6C;
+  font-size: 30px;
+}
+
+@media (min-width: 992px) {
+  .navbar .container-search-box {
+    width: 80px;
+  }
 }
 
 .navbar .container-search-box .search-box {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   background: #F9F9F9;
   color: #002F6C;
   height: 40px;
+}
+
+@media (min-width: 992px) {
+  .navbar .container-search-box .search-box {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    right: 0;
+  }
 }
 
 .navbar .container-search-box .search-box .search-btn {
@@ -534,21 +615,38 @@ textarea {
   border-radius: 0;
 }
 
-.navbar .container-search-box .search-box:hover .search-txt {
-  width: 200px;
-  padding: 0 6px;
+@media (min-width: 992px) {
+  .navbar .container-search-box .search-box:hover .search-txt {
+    width: 200px;
+    padding: 0 6px;
+  }
+  .navbar .container-search-box .search-box:hover .search-btn {
+    padding-right: 0px;
+    background-color: #002F6C;
+    color: #FFFFFF;
+  }
+  .navbar .container-search-box .search-box:hover .search-btn .text-search {
+    opacity: 0;
+    -webkit-transform: translate(-10%, -50%);
+            transform: translate(-10%, -50%);
+  }
 }
 
-.navbar .container-search-box .search-box:hover .search-btn {
-  padding-right: 0px;
-  background-color: #002F6C;
-  color: #FFFFFF;
-}
-
-.navbar .container-search-box .search-box:hover .search-btn .text-search {
-  opacity: 0;
-  -webkit-transform: translate(-10%, -50%);
-          transform: translate(-10%, -50%);
+@media (max-width: 991.98px) {
+  .navbar .container-search-box .search-box .search-txt {
+    width: 200px;
+    padding: 0 6px;
+  }
+  .navbar .container-search-box .search-box .search-btn {
+    padding-right: 0px;
+    background-color: #002F6C;
+    color: #FFFFFF;
+  }
+  .navbar .container-search-box .search-box .search-btn .text-search {
+    opacity: 0;
+    -webkit-transform: translate(-10%, -50%);
+            transform: translate(-10%, -50%);
+  }
 }
 
 .navbar .change-lang {
@@ -556,6 +654,7 @@ textarea {
   color: #002F6C;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  font-size: 14px;
 }
 
 .navbar .change-lang:hover {
