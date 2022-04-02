@@ -1102,6 +1102,19 @@ textarea {
   text-decoration: underline;
 }
 
+.footer .social-media .icon {
+  color: #FFFFFF;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+}
+
+.footer .social-media .icon:hover {
+  color: #FFFFFF;
+  -webkit-transform: scale3d(1.2, 1.2, 1.2);
+          transform: scale3d(1.2, 1.2, 1.2);
+}
+
 .footer .footr-bottom {
   border-top: 1px solid #FFFFFF;
 }
