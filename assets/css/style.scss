@@ -125,9 +125,7 @@ body {
     font-family: $fontTitle;
 }
 
-.font-bold {
-    font-weight: 700;
-}
+
 
 /*** Buttons ***/
 button,
@@ -377,6 +375,10 @@ textarea {
         font-size: 10px;
     }
 
+}
+
+.font-bold {
+    font-weight: 700;
 }
 
 .img-fit {
@@ -1278,7 +1280,7 @@ textarea {
 }
 
 
-/*** OUR STRATEGY ***/
+/*** STRATEGY ***/
 .strategy {
     background-color: $blue;
     position: relative;
@@ -1340,6 +1342,8 @@ textarea {
     }
 }
 
+/*** Swiper Controller ***/
+
 .swiper-controller {
     .swiper-button-next,
     .swiper-button-prev,
@@ -1357,10 +1361,50 @@ textarea {
     }
 
     .swiper-pagination {
-
+        bottom: 1px;
         .swiper-pagination-bullet {
             border-radius: 0;
-            background: $white;
+        }
+    }
+
+    &.white {
+        .swiper-pagination {
+            .swiper-pagination-bullet {
+                background: $white;
+            }
+        }
+    }
+
+    &.red {
+        .swiper-pagination {
+            .swiper-pagination-bullet {
+                background: $red;
+            }
+        }
+    }
+}
+
+/*** VALUES ***/
+
+.values-swiper {
+    .swiper-slide {
+        .card-values-swiper {
+            height: 400px;
+            position: relative;
+            @media (max-width: 767.98px) {
+                height: 250px;
+
+            }
+            .img {
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+            }
         }
     }
 }

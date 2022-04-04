@@ -129,10 +129,10 @@ $(window).on("load", function () {
         crossFade: true,
       },
       speed: 800,
-      // autoplay: {
-      //   disableOnInteraction: false,
-      //   delay: 5000,
-      // },
+      autoplay: {
+        disableOnInteraction: false,
+        delay: 5000,
+      },
       pagination: {
         el: ".strategy-swiper .swiper-pagination",
         clickable: true,
@@ -140,6 +140,38 @@ $(window).on("load", function () {
       navigation: {
         nextEl: ".strategy-swiper .swiper-button-next",
         prevEl: ".strategy-swiper .swiper-button-prev",
+      },
+    });
+  }
+  if ($(".values-swiper").length) {
+    let swiperValues = new Swiper(".values-swiper", {
+      spaceBetween: 15,
+      centeredSlides: true,
+      loop: true,
+      speed: 800,
+      autoplay: {
+        disableOnInteraction: false,
+        delay: 5000,
+      },
+      pagination: {
+        el: ".values-swiper .swiper-pagination",
+        clickable: true,
+        // dynamicBullets: true,
+      },
+      navigation: {
+        nextEl: ".values-swiper .swiper-button-next",
+        prevEl: ".values-swiper .swiper-button-prev",
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1.8,
+        },
+        768: {
+          slidesPerView: 2.8,
+        },
+        1200: {
+          slidesPerView: 3.8,
+        },
       },
     });
   }
