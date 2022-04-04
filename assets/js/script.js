@@ -11,7 +11,7 @@ $(window).on("load", function () {
     console.log("navBarHeight", navBarHeight);
   });
   if ($(".hero").length) {
-    var swiper = new Swiper(".hero-swiper", {
+    let swiperHero = new Swiper(".hero-swiper", {
       loop: true,
       effect: "fade",
       fadeEffect: {
@@ -118,5 +118,29 @@ $(window).on("load", function () {
         }
       }, 2000 / goal);
     }
+  }
+
+  // About
+  if ($(".strategy-swiper").length) {
+    let swiperStrategy = new Swiper(".strategy-swiper", {
+      loop: true,
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true,
+      },
+      speed: 800,
+      // autoplay: {
+      //   disableOnInteraction: false,
+      //   delay: 5000,
+      // },
+      pagination: {
+        el: ".strategy-swiper .swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".strategy-swiper .swiper-button-next",
+        prevEl: ".strategy-swiper .swiper-button-prev",
+      },
+    });
   }
 });
