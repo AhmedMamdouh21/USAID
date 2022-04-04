@@ -440,6 +440,10 @@ textarea {
   }
 }
 
+.border-bottom-gray {
+  border-bottom: 1px solid #CBCBCB;
+}
+
 .overlay, .technical-approach .card-technical-approach {
   position: relative;
 }
@@ -1437,5 +1441,39 @@ textarea {
 /*** ORGANIZATIONAL STRUCTURE ***/
 .organizational-structure {
   background-color: #FFFFFF;
+}
+
+/*** Breadcrumb ***/
+.breadcrumb .breadcrumb-item .breadcrumb-link {
+  color: #BA0C2F;
+}
+
+.breadcrumb .breadcrumb-item.active {
+  color: #A6A6A6;
+}
+
+.elements .elements-even-odd:nth-child(even) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+@media (min-width: 1200px) {
+  .elements .elements-even-odd .img-element {
+    height: 400px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .elements .elements-even-odd .img-element {
+    height: 300vh;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .elements .elements-even-odd .img-element {
+    height: 250px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

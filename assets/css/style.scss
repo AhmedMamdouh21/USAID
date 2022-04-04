@@ -431,6 +431,10 @@ textarea {
     }
 }
 
+.border-bottom-gray {
+    border-bottom: 1px solid $gray-medium;
+}
+
 .overlay {
     position: relative;
 
@@ -1413,4 +1417,38 @@ textarea {
 
 .organizational-structure {
     background-color: $white;
+}
+
+/*** Breadcrumb ***/
+.breadcrumb {
+    .breadcrumb-item {
+        .breadcrumb-link {
+            color: $red;
+        }
+        &.active {
+            color: $gray;
+        }
+    }
+}
+
+.elements {
+    .elements-even-odd {
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .img-element {
+            @media (min-width: 1200px) {
+                height: 400px;
+            }
+    
+            @media (min-width: 768px) and (max-width: 1199.98px) {
+                height: 300vh;
+            }
+    
+            @media (max-width: 767.98px) {
+                height: 250px;
+            }
+    
+        }
+    }
 }
