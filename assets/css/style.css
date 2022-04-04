@@ -1433,4 +1433,9 @@ textarea {
   height: 100%;
   z-index: -1;
 }
+
+/*** ORGANIZATIONAL STRUCTURE ***/
+.organizational-structure {
+  background-color: #FFFFFF;
+}
 /*# sourceMappingURL=style.css.map */
