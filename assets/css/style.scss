@@ -181,17 +181,37 @@ textarea {
         transition: $transitionFast;
         font-size: 22px;
         margin-#{$start}: 0.15rem;
-        color: $red;
     }
 
     &.red {
         color: $red;
+
+        i {
+            color: $red;
+        }
 
         &:hover {
             color: $blue;
 
             i {
                 color: $blue;
+                margin-#{$start}: 0.5rem;
+            }
+        }
+    }
+
+    &.white {
+        color: $white;
+
+        i {
+            color: $white;
+        }
+
+        &:hover {
+            color: $white;
+
+            i {
+                color: $white;
                 margin-#{$start}: 0.5rem;
             }
         }
@@ -1328,6 +1348,7 @@ textarea {
             position: absolute;
             left: 0;
             right: 0;
+
             @media (min-width: 1200px) {
                 bottom: calc(55vh + 1rem);
             }
@@ -1341,7 +1362,7 @@ textarea {
 
             }
 
-            
+
         }
     }
 }
@@ -1349,6 +1370,7 @@ textarea {
 /*** Swiper Controller ***/
 
 .swiper-controller {
+
     .swiper-button-next,
     .swiper-button-prev,
     .swiper-pagination {
@@ -1366,6 +1388,7 @@ textarea {
 
     .swiper-pagination {
         bottom: 1px;
+
         .swiper-pagination-bullet {
             border-radius: 0;
         }
@@ -1395,10 +1418,12 @@ textarea {
         .card-values-swiper {
             height: 400px;
             position: relative;
+
             @media (max-width: 767.98px) {
                 height: 250px;
 
             }
+
             .img {
                 position: absolute;
                 left: 0;
@@ -1422,9 +1447,12 @@ textarea {
 /*** Breadcrumb ***/
 .breadcrumb {
     .breadcrumb-item {
+        text-transform: capitalize;
+
         .breadcrumb-link {
             color: $red;
         }
+
         &.active {
             color: $gray;
         }
@@ -1436,19 +1464,174 @@ textarea {
         &:nth-child(even) {
             flex-direction: row-reverse;
         }
+
         .img-element {
             @media (min-width: 1200px) {
                 height: 400px;
             }
-    
+
             @media (min-width: 768px) and (max-width: 1199.98px) {
                 height: 300vh;
             }
-    
+
             @media (max-width: 767.98px) {
                 height: 250px;
             }
-    
+
+        }
+    }
+}
+
+.show-details {
+    transition: $transitionFast;
+
+    &:hover {
+        color: $red;
+    }
+}
+
+/*** NEWS ***/
+.news {
+    .card-news {
+        display: block;
+        text-decoration: none;
+        color: $black;
+    }
+
+    .swiper-card-news {
+        height: 250px;
+
+        .swiper-slide {
+            &.overlay {
+                &::after {
+                    background-color: rgba($color: $gray-dark, $alpha: 0.2);
+                    z-index: 1;
+                }
+            }
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+/*** PHOTO GALLERY ***/
+.photo-gallery {
+    .card-photo-gallery {
+        height: 300px;
+        position: relative;
+        background-color: white;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0px 17px 0 -10px rgba($color: $black, $alpha: 0.1),
+            0px 30px 0 -16px rgba($color: $black, $alpha: 0.1);
+        text-decoration: none;
+
+        &.overlay {
+            &::after {
+                background: transparent linear-gradient(180deg, #3C3C3C00 0%, #2F2F2F85 42%, #1D1D1D 100%) 0% 0% no-repeat padding-box;
+                z-index: 1;
+            }
+        }
+
+        .card-title {
+            position: relative;
+            z-index: 2;
+            color: $white;
+            margin-bottom: 0;
+        }
+
+        .card-img {
+            position: absolute;
+            inset: 0;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+/*** Videos ***/
+.videos {
+    .card-videos {
+        height: 300px;
+        position: relative;
+        background-color: white;
+        border-radius: 5px;
+        overflow: hidden;
+        text-decoration: none;
+
+        &.overlay {
+            &::after {
+                background: transparent linear-gradient(180deg, #3C3C3C00 0%, #2F2F2F85 42%, #1D1D1D 100%) 0% 0% no-repeat padding-box;
+                z-index: 1;
+            }
+        }
+
+        .card-title {
+            position: relative;
+            z-index: 2;
+            color: $white;
+            margin-bottom: 0;
+        }
+
+        .card-img {
+            position: absolute;
+            inset: 0;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+/*** OUR PUBLICATIONS ***/
+
+.our-publications {
+    .card-publications {
+        background-color: rgba($color: $gray, $alpha: 0.1);
+
+        .download-icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 5px;
+            background-color: $blue;
+            color: $white;
+        }
+
+        .download {
+            color: $red;
+            transition: $transitionFast;
+            text-transform: capitalize;
+
+            &:hover {
+                color: $blue;
+            }
+        }
+    }
+}
+
+
+/*** ARTICLES ***/
+.articles {
+
+    .card-articles {
+
+        @media (min-width: 768px) {
+            height: 400px;
+        }
+
+        @media (max-width: 767.98px) {
+            height: 250px;
+        }
+
+        &.overlay {
+
+            &::after {
+                background: transparent linear-gradient(180deg, #1D1D1D00 0%, #1D1D1D66 41%, #1D1D1D 100%) 0% 0% no-repeat padding-box;
+            }
         }
     }
 }

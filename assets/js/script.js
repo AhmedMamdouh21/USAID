@@ -175,4 +175,24 @@ $(window).on("load", function () {
       },
     });
   }
+
+  if ($(".swiper-card-news").length) {
+    let swiperValues = new Swiper(".swiper-card-news", {
+      spaceBetween: 0,
+      loop: true,
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true,
+      },
+      speed: 800,
+      autoplay: {
+        disableOnInteraction: false,
+        delay: 5000,
+      },
+      navigation: {
+        nextEl: ".swiper-card-news .swiper-button-next",
+        prevEl: ".swiper-card-news .swiper-button-prev",
+      },
+    });
+  }
 });
