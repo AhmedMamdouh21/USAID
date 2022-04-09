@@ -402,4 +402,10 @@ $(window).on("load", function () {
       }
     });
   }
+
+  // Select
+  $("#filter-office, #filter-type, #filter-eligibility").select2({
+    theme: "bootstrap-5",
+    placeholder: $(this).data("placeholder"),
+  });
 });

@@ -1,4 +1,6 @@
 @import url(./bootstrap.min.css);
+@import url(./select2.min.css);
+@import url(./select2-bootstrap-5-theme.min.css);
 @import url(./swiper-bundle.min.css);
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;500;700&display=swap');
 // Color Pallete
@@ -209,6 +211,23 @@ textarea {
 
             i {
                 color: $blue;
+                margin-#{$start}: 0.5rem;
+            }
+        }
+    }
+
+    &.blue {
+        color: $blue;
+
+        i {
+            color: $blue;
+        }
+
+        &:hover {
+            color: $red;
+
+            i {
+                color: $red;
                 margin-#{$start}: 0.5rem;
             }
         }
@@ -490,6 +509,7 @@ textarea {
 .navbar {
     &.navbar-fixed {
         background-color: $offWhite;
+        z-index: 9999;
     }
 
     .navbar-brand {
@@ -1746,4 +1766,34 @@ textarea {
             inset: 0;
         }
     }
+}
+
+// Select 
+.select2-dropdown {
+    background-color: $offWhite;
+}
+
+.select2-container--bootstrap-5 .select2-dropdown .select2-search .select2-search__field {
+    background-color: $offWhite;
+}
+
+.select2-container--bootstrap-5.select2-container--focus .select2-selection, .select2-container--bootstrap-5.select2-container--open .select2-selection {
+    box-shadow:none;
+    border-color: $blue;
+}
+.select2-container--bootstrap-5 .select2-dropdown ,
+.select2-container--bootstrap-5 .select2-dropdown .select2-search .select2-search__field,
+.select2-container--bootstrap-5 .select2-dropdown .select2-search .select2-search__field:focus{
+    border-color: $blue;
+}
+
+.select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option.select2-results__option--selected, .select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option[aria-selected=true] {
+    background-color: $blue;
+}
+
+.select2-container--bootstrap-5 .select2-selection {
+    background-color: $offWhite;
+}
+.select2-container--bootstrap-5 .select2-selection--single .select2-selection__rendered .select2-selection__placeholder {
+color: $gray;
 }
