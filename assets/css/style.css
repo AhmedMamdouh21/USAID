@@ -1798,6 +1798,18 @@ textarea {
   inset: 0;
 }
 
+/*** JOB VACANCIES DETAILS ***/
+.job-vacancies-details a.color-blue {
+  font-weight: 700;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.job-vacancies-details a.color-blue:hover {
+  color: #BA0C2F;
+}
+
+/*** Select ***/
 .select2-dropdown {
   background-color: #F9F9F9;
 }

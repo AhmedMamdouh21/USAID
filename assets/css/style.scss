@@ -1768,7 +1768,21 @@ textarea {
     }
 }
 
-// Select 
+/*** JOB VACANCIES DETAILS ***/
+.job-vacancies-details {
+        a {
+            &.color-blue {
+
+                font-weight: 700;
+                transition: $transitionFast;
+                &:hover {
+                    color:$red;
+                }
+            }
+        }
+}
+
+/*** Select ***/
 .select2-dropdown {
     background-color: $offWhite;
 }
