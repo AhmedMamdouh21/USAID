@@ -26,6 +26,10 @@
   color: #A6A6A6;
 }
 
+.color-black {
+  color: #1D1D1D;
+}
+
 html,
 body {
   scroll-behavior: auto !important;
@@ -1873,5 +1877,42 @@ textarea {
 
 .contact-info .info a:hover {
   color: #002F6C;
+}
+
+/*** SITE MAP ***/
+.site-map a {
+  text-decoration: none;
+}
+
+.site-map a.color-blue {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.site-map a.color-blue:hover {
+  color: #BA0C2F;
+}
+
+@media (max-width: 1199.98px) {
+  .site-map .col-lg {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: 50%;
+  }
+}
+
+.site-map .list_items ul {
+  list-style: none;
+  padding: 0;
+}
+
+.site-map .list_items ul li a.color-black {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.site-map .list_items ul li a.color-black:hover {
+  color: #BA0C2F;
 }
 /*# sourceMappingURL=style.css.map */

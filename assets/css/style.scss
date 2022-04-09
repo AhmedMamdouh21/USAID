@@ -47,6 +47,9 @@ $end: right;
 .color-gray {
     color: $gray;
 }
+.color-black {
+    color: $black;
+}
 
 html,
 body {
@@ -1854,6 +1857,42 @@ textarea {
             color: $black;
             &:hover {
                 color: $blue;
+            }
+        }
+    }
+}
+
+/*** SITE MAP ***/
+.site-map {
+    a {
+        text-decoration: none;
+        &.color-blue {
+            transition: $transitionFast;
+            &:hover {
+                color: $red;
+            }
+        }
+    }
+    .col-lg {
+        @media (max-width: 1199.98px) {
+            flex: 0 0 auto;
+            width: 50%;
+        }
+    }
+    .list_items {
+
+        ul {
+            list-style: none;
+            padding: 0;
+            li {
+                a {
+                    &.color-black {
+                        transition: $transitionFast;
+                        &:hover {
+                            color: $red;
+                        }
+                    }
+                }
             }
         }
     }
