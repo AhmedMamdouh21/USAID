@@ -195,4 +195,132 @@ $(window).on("load", function () {
       },
     });
   }
+  if ($(".photo-gallery-data").length) {
+    // Load More Get Data
+    const container = document.querySelector(".more-data");
+    const loading = document.querySelector(".loading-scroll");
+    const data_url = $("#containerLoadMore").attr("data-url");
+    let page_number = 1;
+    let current_index = 0;
+    const items_per_page = 6;
+    let total = 0;
+
+    function loadIteams() {
+      $.ajax({
+        type: "GET",
+        url: data_url,
+        dataType: "json",
+        success: (data) => {
+          current_index = (page_number - 1) * items_per_page;
+          upper_limit_index = current_index + items_per_page - 1;
+          console.log("page_number", page_number);
+          console.log("current_index", current_index);
+          console.log("upper_limit_index", upper_limit_index);
+          total = data.length;
+          console.log("total", total);
+          while (current_index <= upper_limit_index) {
+            console.log("data", data[current_index]);
+            const postElement = document.createElement("div");
+            postElement.classList.add("col-lg-4");
+            postElement.innerHTML = `
+
+            <a
+              href="photo-gallery-details.html"
+              class="card-photo-gallery p-4  mb-5 d-flex align-items-end overlay hvr-img-wrap"
+            >
+              <h3 class="card-title medium-title font-title font-bold">
+               ${data[current_index].title}
+              </h3>
+              <div class="card-img hvr-img">
+                <img class="img-fit" src=" ${data[current_index].thumbnailUrl}" alt="" />
+              </div>
+            </a>
+                      `;
+            container.appendChild(postElement);
+            console.log("data_url", postElement);
+            current_index++;
+            setTimeout(function () {
+              loading.classList.remove("show");
+            }, 200);
+          }
+          page_number++;
+        },
+      });
+    }
+    loadIteams();
+    loading.classList.remove("show");
+
+    $(".btn-load-more").on("click", function () {
+      if (current_index < total) {
+        loading.classList.add("show");
+        loadIteams();
+      } else if (upper_limit_index == total - 1) {
+        setTimeout(function () {
+          loading.classList.remove("show");
+          $(".btn-load-more").classList.remove("hidden");
+        }, 100);
+      }
+    });
+  }
+
+  if ($(".photo-gallery-album-data").length) {
+    // Load More Get Data
+    const container = document.querySelector(".more-data");
+    const loading = document.querySelector(".loading-scroll");
+    const data_url = $("#containerLoadMore").attr("data-url");
+    let page_number = 1;
+    let current_index = 0;
+    const items_per_page = 6;
+    let total = 0;
+
+    function loadIteams() {
+      $.ajax({
+        type: "GET",
+        url: data_url,
+        dataType: "json",
+        success: (data) => {
+          current_index = (page_number - 1) * items_per_page;
+          upper_limit_index = current_index + items_per_page - 1;
+          console.log("page_number", page_number);
+          console.log("current_index", current_index);
+          console.log("upper_limit_index", upper_limit_index);
+          total = data.length;
+          console.log("total", total);
+          while (current_index <= upper_limit_index) {
+            console.log("data", data[current_index]);
+            const postElement = document.createElement("div");
+            postElement.classList.add("image-grid");
+            postElement.innerHTML = `
+
+            
+          <div class="image">
+            <img class="img-fit" src="${data[current_index].thumbnailUrl}"" alt="" />
+          </div>
+                      `;
+            container.appendChild(postElement);
+            console.log("data_url", postElement);
+            current_index++;
+            setTimeout(function () {
+              loading.classList.remove("show");
+            }, 200);
+          }
+          page_number++;
+        },
+      });
+    }
+    loadIteams();
+    loading.classList.remove("show");
+
+    $(".btn-load-more").on("click", function () {
+      if (current_index < total) {
+        loading.classList.add("show");
+        loadIteams();
+      } else if (upper_limit_index == total - 1) {
+        setTimeout(function () {
+          loading.classList.remove("show");
+          $(".btn-load-more").classList.remove("hidden");
+        }, 100);
+      }
+    });
+  }
 });
