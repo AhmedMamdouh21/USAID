@@ -172,10 +172,12 @@ textarea {
         color: $blue;
         background-color: $white;
         box-shadow: 0px 5px 10px #002F6C1A;
+
         &:hover {
             background-color: $blue;
             color: $white;
         }
+
         &.hidden {
             opacity: 0;
             pointer-events: none;
@@ -1618,11 +1620,12 @@ textarea {
             height: 100%;
             width: 100%;
         }
+
         .play-icon {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             z-index: 2;
         }
     }
@@ -1634,6 +1637,7 @@ textarea {
     .card-publications {
         background-color: rgba($color: $gray, $alpha: 0.1);
         box-shadow: 0px 5px 10px #002F6C1A;
+
         .download-icon {
             width: 35px;
             height: 35px;
@@ -1679,14 +1683,15 @@ textarea {
 
 // loading
 .loading-scroll {
-	opacity: 0;
+    opacity: 0;
     display: flex;
     position: relative;
     bottom: 0;
     left: 50%;
     justify-content: center;
     transform: translateX(-50%);
-	transition: opacity .3s ease-in;
+    transition: opacity .3s ease-in;
+
     .ball {
         background-color: $blue;
         border-radius: 50%;
@@ -1694,9 +1699,11 @@ textarea {
         height: 10px;
         width: 10px;
         animation: jump .5s ease-in infinite;
+
         &:nth-of-type(2) {
             animation-delay: 0.1s;
         }
+
         &:nth-of-type(3) {
             animation-delay: 0.2s;
         }
@@ -1705,23 +1712,25 @@ textarea {
     &.show {
         opacity: 1;
     }
-    
+
 }
 
 @keyframes jump {
-	0%, 100% {
-		transform: translateY(0);
-	}
-	
-	50% {
-		transform: translateY(-10px);
-	}
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 /*** PHOTOS ALBUM NAME ***/
 .photo-gallery-album {
     .image-grid {
-      
+
         &:nth-child(6n+1),
         &:nth-child(6n+2),
         &:nth-child(6n+3),
@@ -1739,6 +1748,7 @@ textarea {
                 width: 66.66666667%;
             }
         }
+
         &:nth-child(6n+6) {
             @media (min-width: 992px) {
                 flex: 0 0 auto;
@@ -1746,19 +1756,21 @@ textarea {
             }
         }
     }
+
     .image {
         overflow: hidden;
         border-radius: 5px;
         position: relative;
-       
+
         margin-bottom: 1.5rem;
+
         @media (min-width: 768px) {
             height: 350px;
-         }
+        }
 
-         @media (max-width: 767.98px) { 
+        @media (max-width: 767.98px) {
             height: 250px;
-          }
+        }
 
 
         img {
@@ -1770,16 +1782,17 @@ textarea {
 
 /*** JOB VACANCIES DETAILS ***/
 .job-vacancies-details {
-        a {
-            &.color-blue {
+    a {
+        &.color-blue {
 
-                font-weight: 700;
-                transition: $transitionFast;
-                &:hover {
-                    color:$red;
-                }
+            font-weight: 700;
+            transition: $transitionFast;
+
+            &:hover {
+                color: $red;
             }
         }
+    }
 }
 
 /*** Select ***/
@@ -1791,23 +1804,57 @@ textarea {
     background-color: $offWhite;
 }
 
-.select2-container--bootstrap-5.select2-container--focus .select2-selection, .select2-container--bootstrap-5.select2-container--open .select2-selection {
-    box-shadow:none;
-    border-color: $blue;
-}
-.select2-container--bootstrap-5 .select2-dropdown ,
-.select2-container--bootstrap-5 .select2-dropdown .select2-search .select2-search__field,
-.select2-container--bootstrap-5 .select2-dropdown .select2-search .select2-search__field:focus{
+.select2-container--bootstrap-5.select2-container--focus .select2-selection,
+.select2-container--bootstrap-5.select2-container--open .select2-selection {
+    box-shadow: none;
     border-color: $blue;
 }
 
-.select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option.select2-results__option--selected, .select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option[aria-selected=true] {
+.select2-container--bootstrap-5 .select2-dropdown,
+.select2-container--bootstrap-5 .select2-dropdown .select2-search .select2-search__field,
+.select2-container--bootstrap-5 .select2-dropdown .select2-search .select2-search__field:focus {
+    border-color: $blue;
+}
+
+.select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option.select2-results__option--selected,
+.select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option[aria-selected=true] {
     background-color: $blue;
 }
 
 .select2-container--bootstrap-5 .select2-selection {
     background-color: $offWhite;
 }
+
 .select2-container--bootstrap-5 .select2-selection--single .select2-selection__rendered .select2-selection__placeholder {
-color: $gray;
+    color: $gray;
+}
+
+/*** CONTACT INFO ***/
+.contact-info {
+    .map {
+
+        @media (min-width: 1200px) {
+            height: 65vh;
+        }
+
+        @media (min-width: 768px) and (max-width: 1199.98px) {
+            height: 40vh;
+        }
+
+        @media (max-width: 767.98px) { 
+            height: 250px;
+         }
+
+
+    }
+
+    .info {
+        a {
+            transition: $transitionFast;
+            color: $black;
+            &:hover {
+                color: $blue;
+            }
+        }
+    }
 }

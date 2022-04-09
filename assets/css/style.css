@@ -1725,7 +1725,8 @@ textarea {
 }
 
 @-webkit-keyframes jump {
-  0%, 100% {
+  0%,
+  100% {
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
@@ -1736,7 +1737,8 @@ textarea {
 }
 
 @keyframes jump {
-  0%, 100% {
+  0%,
+  100% {
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
@@ -1818,7 +1820,8 @@ textarea {
   background-color: #F9F9F9;
 }
 
-.select2-container--bootstrap-5.select2-container--focus .select2-selection, .select2-container--bootstrap-5.select2-container--open .select2-selection {
+.select2-container--bootstrap-5.select2-container--focus .select2-selection,
+.select2-container--bootstrap-5.select2-container--open .select2-selection {
   -webkit-box-shadow: none;
           box-shadow: none;
   border-color: #002F6C;
@@ -1830,7 +1833,8 @@ textarea {
   border-color: #002F6C;
 }
 
-.select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option.select2-results__option--selected, .select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option[aria-selected=true] {
+.select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option.select2-results__option--selected,
+.select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option[aria-selected=true] {
   background-color: #002F6C;
 }
 
@@ -1840,5 +1844,34 @@ textarea {
 
 .select2-container--bootstrap-5 .select2-selection--single .select2-selection__rendered .select2-selection__placeholder {
   color: #A6A6A6;
+}
+
+/*** CONTACT INFO ***/
+@media (min-width: 1200px) {
+  .contact-info .map {
+    height: 65vh;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .contact-info .map {
+    height: 40vh;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .contact-info .map {
+    height: 250px;
+  }
+}
+
+.contact-info .info a {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  color: #1D1D1D;
+}
+
+.contact-info .info a:hover {
+  color: #002F6C;
 }
 /*# sourceMappingURL=style.css.map */
