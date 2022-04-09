@@ -47,8 +47,9 @@ $(window).on("load", function () {
       );
     });
   }
-  // Video Modek
-  if ($(".media-videos").length) {
+  // Video Model
+
+  function playVideo() {
     function getId(url) {
       const regExp =
         /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
@@ -74,6 +75,9 @@ $(window).on("load", function () {
     $(".videoModal").on("hidden.bs.modal", function (e) {
       $(".videoModal iframe").attr("src", "");
     });
+  }
+  if ($(".media-videos").length) {
+    playVideo();
   }
 
   // Counter {
@@ -301,6 +305,81 @@ $(window).on("load", function () {
             console.log("data_url", postElement);
             current_index++;
             setTimeout(function () {
+              loading.classList.remove("show");
+            }, 200);
+          }
+          page_number++;
+        },
+      });
+    }
+    loadIteams();
+    loading.classList.remove("show");
+
+    $(".btn-load-more").on("click", function () {
+      if (current_index < total) {
+        loading.classList.add("show");
+        loadIteams();
+      } else if (upper_limit_index == total - 1) {
+        setTimeout(function () {
+          loading.classList.remove("show");
+          $(".btn-load-more").classList.remove("hidden");
+        }, 100);
+      }
+    });
+  }
+
+  // Videos
+
+  if ($(".videos-data").length) {
+    // Load More Get Data
+    const container = document.querySelector(".more-data");
+    const loading = document.querySelector(".loading-scroll");
+    const data_url = $("#containerLoadMore").attr("data-url");
+    let page_number = 1;
+    let current_index = 0;
+    const items_per_page = 6;
+    let total = 0;
+
+    function loadIteams() {
+      $.ajax({
+        type: "GET",
+        url: data_url,
+        dataType: "json",
+        success: (data) => {
+          current_index = (page_number - 1) * items_per_page;
+          upper_limit_index = current_index + items_per_page - 1;
+          console.log("page_number", page_number);
+          console.log("current_index", current_index);
+          console.log("upper_limit_index", upper_limit_index);
+          total = data.length;
+          console.log("total", total);
+          while (current_index <= upper_limit_index) {
+            console.log("data", data[current_index]);
+            const postElement = document.createElement("div");
+            postElement.classList.add("col-lg-4");
+            postElement.innerHTML = `
+
+            
+            <div
+            videosrc="https://www.youtube.com/watch?v=DEEtSGusigQ"
+            class="card-videos p-3 mb-3 d-flex justify-content-center align-items-end overlay hvr-img-wrap media-videos"
+          >
+            <div class="play-icon main-title color-white">
+              <i class="bi bi-play-fill"></i>
+            </div>
+            <h3 class="card-title medium-title font-title font-bold">
+              CUM QUASI NATUS
+            </h3>
+            <div class="card-img hvr-img">
+              <img class="img-fit" src="${data[current_index].thumbnailUrl}" alt="" />
+            </div>
+          </div>
+                      `;
+            container.appendChild(postElement);
+            console.log("data_url", postElement);
+            current_index++;
+            setTimeout(function () {
+              playVideo();
               loading.classList.remove("show");
             }, 200);
           }
