@@ -362,7 +362,7 @@ $(window).on("load", function () {
             
             <div
             videosrc="https://www.youtube.com/watch?v=DEEtSGusigQ"
-            class="card-videos p-3 mb-3 d-flex justify-content-center align-items-end overlay hvr-img-wrap media-videos"
+            class="card-videos p-3 mb-4 d-flex justify-content-center align-items-end overlay hvr-img-wrap media-videos"
           >
             <div class="play-icon main-title color-white">
               <i class="bi bi-play-fill"></i>
@@ -404,8 +404,89 @@ $(window).on("load", function () {
   }
 
   // Select
-  $("#filter-office, #filter-type, #filter-eligibility").select2({
-    theme: "bootstrap-5",
-    placeholder: $(this).data("placeholder"),
-  });
+  if ($("#filter-office, #filter-type, #filter-eligibility").length) {
+    $("#filter-office, #filter-type, #filter-eligibility").select2({
+      theme: "bootstrap-5",
+      placeholder: $(this).data("placeholder"),
+    });
+  }
+
+  // ARTICLES
+
+  if ($(".articles-data").length) {
+    // Load More Get Data
+    const container = document.querySelector(".more-data");
+    const loading = document.querySelector(".loading-scroll");
+    const data_url = $("#containerLoadMore").attr("data-url");
+    let page_number = 1;
+    let current_index = 0;
+    const items_per_page = 6;
+    let total = 0;
+
+    function loadIteams() {
+      $.ajax({
+        type: "GET",
+        url: data_url,
+        dataType: "json",
+        success: (data) => {
+          current_index = (page_number - 1) * items_per_page;
+          upper_limit_index = current_index + items_per_page - 1;
+          console.log("page_number", page_number);
+          console.log("current_index", current_index);
+          console.log("upper_limit_index", upper_limit_index);
+          total = data.length;
+          console.log("total", total);
+          while (current_index <= upper_limit_index) {
+            console.log("data", data[current_index]);
+            const postElement = document.createElement("div");
+            postElement.classList.add("col-lg-4");
+            postElement.innerHTML = `
+            <a
+            href="articles-details.html"
+            class="card-articles position-relative overflow-hidden overlay d-flex text-decoration-none mb-4 p-4 hvr-img-wrap"
+          >
+            <img
+              class="hvr-img img-fit position-absolute"
+              src="${data[current_index].thumbnailUrl}"
+              alt="banner"
+            />
+            <article class="d-flex flex-column justify-content-end color-white">
+              <h3 class="small-title font-bold">
+              ${data[current_index].title}
+              </h3>
+              <p class="small-description">
+              ${data[current_index].title}
+              </p>
+              <span class="btn_arrow white">
+                <span>Read More</span>
+                <i class="bi bi-arrow-right-short"></i>
+              </span>
+            </article>
+          </a> `;
+            container.appendChild(postElement);
+            console.log("data_url", postElement);
+            current_index++;
+            setTimeout(function () {
+              loading.classList.remove("show");
+            }, 200);
+          }
+          page_number++;
+        },
+      });
+    }
+    loadIteams();
+    loading.classList.remove("show");
+
+    $(".btn-load-more").on("click", function () {
+      if (current_index < total) {
+        loading.classList.add("show");
+        loadIteams();
+      } else if (upper_limit_index == total - 1) {
+        setTimeout(function () {
+          loading.classList.remove("show");
+          $(".btn-load-more").classList.remove("hidden");
+        }, 100);
+      }
+    });
+  }
 });

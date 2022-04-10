@@ -40,6 +40,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   background-color: #F9F9F9;
+  color: #1D1D1D;
 }
 
 @media (min-width: 1600px) {
@@ -1914,5 +1915,57 @@ textarea {
 
 .site-map .list_items ul li a.color-black:hover {
   color: #BA0C2F;
+}
+
+/*** ARTICLES Details ***/
+.articles-details .header .social-media .icon {
+  color: #BA0C2F;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+}
+
+.articles-details .header .social-media .icon:hover {
+  -webkit-transform: scale3d(1.2, 1.2, 1.2);
+          transform: scale3d(1.2, 1.2, 1.2);
+}
+
+@media (min-width: 1200px) {
+  .articles-details .banner {
+    height: 400px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .articles-details .banner {
+    height: 300px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .articles-details .banner {
+    height: 250px;
+  }
+}
+
+.articles-details .details .section-title, .articles-details .details .counter .count .number, .counter .count .articles-details .details .number {
+  text-transform: none;
+}
+
+@media (min-width: 768px) {
+  .articles-details .img-details {
+    height: 280px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .articles-details .img-details {
+    height: 250px;
+  }
+}
+
+/*** Related Articles ***/
+.related-articles .card-articles {
+  height: 250px;
 }
 /*# sourceMappingURL=style.css.map */
