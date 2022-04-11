@@ -1557,6 +1557,27 @@ textarea {
             }
         }
     }
+    
+    // Details
+    &.news-details {
+        .swiper-card-news {
+            @media (min-width: 1200px) {
+                height: 400px;
+               }
+               @media (min-width: 768px) and (max-width: 1199.98px) {
+                height: 300px; 
+               }
+        
+               @media (max-width: 767.98px) { 
+                height: 250px; 
+                }
+        }
+        .details {
+            .section-title {
+                text-transform: none;
+            }
+        }
+    }
 }
 
 /*** PHOTO GALLERY ***/

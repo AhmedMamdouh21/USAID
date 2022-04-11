@@ -1573,6 +1573,28 @@ textarea {
   display: none;
 }
 
+@media (min-width: 1200px) {
+  .news.news-details .swiper-card-news {
+    height: 400px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .news.news-details .swiper-card-news {
+    height: 300px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .news.news-details .swiper-card-news {
+    height: 250px;
+  }
+}
+
+.news.news-details .details .section-title, .news.news-details .details .counter .count .number, .counter .count .news.news-details .details .number {
+  text-transform: none;
+}
+
 /*** PHOTO GALLERY ***/
 .photo-gallery .card-photo-gallery {
   height: 300px;

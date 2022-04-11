@@ -180,7 +180,7 @@ $(window).on("load", function () {
     });
   }
 
-  if ($(".swiper-card-news").length) {
+  function swiperCardNews() {
     let swiperValues = new Swiper(".swiper-card-news", {
       spaceBetween: 0,
       loop: true,
@@ -189,15 +189,19 @@ $(window).on("load", function () {
         crossFade: true,
       },
       speed: 800,
-      autoplay: {
-        disableOnInteraction: false,
-        delay: 5000,
-      },
+      // autoplay: {
+      //   disableOnInteraction: false,
+      //   delay: 5000,
+      // },
       navigation: {
         nextEl: ".swiper-card-news .swiper-button-next",
         prevEl: ".swiper-card-news .swiper-button-prev",
       },
     });
+  }
+
+  if ($(".swiper-card-news").length) {
+    swiperCardNews();
   }
   if ($(".photo-gallery-data").length) {
     // Load More Get Data
@@ -261,7 +265,7 @@ $(window).on("load", function () {
       } else if (upper_limit_index == total - 1) {
         setTimeout(function () {
           loading.classList.remove("show");
-          $(".btn-load-more").classList.remove("hidden");
+          $(".btn-load-more").addClass("hidden");
         }, 100);
       }
     });
@@ -322,7 +326,7 @@ $(window).on("load", function () {
       } else if (upper_limit_index == total - 1) {
         setTimeout(function () {
           loading.classList.remove("show");
-          $(".btn-load-more").classList.remove("hidden");
+          $(".btn-load-more").addClass("hidden");
         }, 100);
       }
     });
@@ -397,7 +401,7 @@ $(window).on("load", function () {
       } else if (upper_limit_index == total - 1) {
         setTimeout(function () {
           loading.classList.remove("show");
-          $(".btn-load-more").classList.remove("hidden");
+          $(".btn-load-more").addClass("hidden");
         }, 100);
       }
     });
@@ -484,7 +488,7 @@ $(window).on("load", function () {
       } else if (upper_limit_index == total - 1) {
         setTimeout(function () {
           loading.classList.remove("show");
-          $(".btn-load-more").classList.remove("hidden");
+          $(".btn-load-more").addClass("hidden");
         }, 100);
       }
     });
@@ -563,7 +567,127 @@ $(window).on("load", function () {
       } else if (upper_limit_index == total - 1) {
         setTimeout(function () {
           loading.classList.remove("show");
-          $(".btn-load-more").classList.remove("hidden");
+          $(".btn-load-more").addClass("hidden");
+        }, 100);
+      }
+    });
+  }
+
+  // ARTICLES
+
+  if ($(".news-data").length) {
+    // Load More Get Data
+    const container = document.querySelector(".more-data");
+    const loading = document.querySelector(".loading-scroll");
+    const data_url = $("#containerLoadMore").attr("data-url");
+    let page_number = 1;
+    let current_index = 0;
+    const items_per_page = 6;
+    let total = 0;
+
+    function loadIteams() {
+      $.ajax({
+        type: "GET",
+        url: data_url,
+        dataType: "json",
+        success: (data) => {
+          current_index = (page_number - 1) * items_per_page;
+          upper_limit_index = current_index + items_per_page - 1;
+          console.log("page_number", page_number);
+          console.log("current_index", current_index);
+          console.log("upper_limit_index", upper_limit_index);
+          total = data.length;
+          console.log("total", total);
+          while (current_index <= upper_limit_index) {
+            console.log("data", data[current_index]);
+            const postElement = document.createElement("div");
+            let imagesNews = "";
+            let checkText = false;
+            postElement.classList.add("col-lg-4");
+            // getImages = data[current_index].images.forEach(
+            //   (element) => element
+            // );
+            // console.log("Teeeeeeeeeeeeest", getImages);
+            data[current_index].images.forEach((element) => {
+              // console.log(element.img);
+              if (element.img == "") {
+                checkText = true;
+              }
+              imagesNews += `
+              <div class="swiper-slide overlay">
+                <img class="img-fit" src="${element.img}" alt="${element.imageTitle}" />
+              </div>
+              `;
+            });
+            console.log("checkText", checkText);
+
+            if (checkText == true) {
+              postElement.innerHTML = `
+              <a href="${data[current_index].url}" class="card-news border-bottom-gray pb-3 mb-3">
+              <h3
+                class="card-title medium-title font-bold font-title text-uppercase"
+              >
+              ${data[current_index].title} ${data[current_index].id}
+              </h3>
+              <p class="card-text small-description">
+              ${data[current_index].description}
+              </p>
+              
+            </a> `;
+            } else {
+              postElement.innerHTML = `
+              <a href="${data[current_index].url}" class="card-news border-bottom-gray pb-3 mb-3">
+
+              <div class="swiper swiper-card-news mb-3">
+                  <div class="swiper-wrapper">
+                    ${imagesNews}
+                  </div>
+                  <div class="swiper-button-next section-title color-white">
+                    <i class="bi bi-arrow-right-short"></i>
+                  </div>
+                  <div class="swiper-button-prev section-title color-white">
+                    <i class="bi bi-arrow-left-short"></i>
+                  </div>
+              </div>
+              
+
+              <h3
+                class="card-title medium-title font-bold font-title text-uppercase"
+              >
+              ${data[current_index].title} ${data[current_index].id}
+              </h3>
+              <p class="card-text small-description">
+              ${data[current_index].description}
+              </p>
+  
+              
+            </a> `;
+            }
+            container.appendChild(postElement);
+            console.log("data_url", postElement);
+            current_index++;
+            $(".news-data .more-data").masonry("destroy");
+            swiperCardNews();
+            setTimeout(function () {
+              loading.classList.remove("show");
+              $(".news-data .more-data").masonry();
+            }, 200);
+          }
+          page_number++;
+        },
+      });
+    }
+    loadIteams();
+    loading.classList.remove("show");
+
+    $(".btn-load-more").on("click", function () {
+      if (current_index < total) {
+        loading.classList.add("show");
+        loadIteams();
+      } else if (upper_limit_index == total - 1) {
+        setTimeout(function () {
+          loading.classList.remove("show");
+          $(".btn-load-more").addClass("hidden");
         }, 100);
       }
     });
