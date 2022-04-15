@@ -63,6 +63,19 @@ body {
     font-weight: 400;
     background-color: $offWhite;
     color: $black;
+    position: relative;
+
+    &::after {
+        content: "";
+        background-image: url("../img/bg-layout.png");
+        inset: 0;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background-size: 100% 100%;
+        z-index: -2;
+    }
 
     @media (min-width: 1600px) {
         font-size: 18px;
@@ -271,6 +284,16 @@ textarea {
 .container-start {
     width: 96%;
     margin-#{$start}: auto;
+
+    @media (max-width: 575.98px) {
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
+.container-end {
+    width: 96%;
+    margin-#{$end}: auto;
 
     @media (max-width: 575.98px) {
         width: 100%;
@@ -1669,6 +1692,10 @@ textarea {
             border-radius: 5px;
             background-color: $blue;
             color: $white;
+
+            &.red {
+                background-color: $red;
+            }
         }
 
         .download {
@@ -1681,6 +1708,28 @@ textarea {
             }
         }
     }
+}
+
+/*** Inner OUR PUBLICATIONS ***/
+
+.related-slider {
+.swiper-inner {
+    .swiper-slide {
+        border-#{$end}: 1px solid  $gray-medium;
+        text-decoration: none;
+        color: $black;
+        @media (min-width: 768px) {
+            padding-#{$end}: 30px;
+        }
+        @media (max-width: 767.98px) {
+            padding-#{$end}: 20px;
+        }
+        .img-slide {
+            height: 180px;
+            overflow: hidden;
+        }
+    }
+}
 }
 
 

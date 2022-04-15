@@ -692,4 +692,24 @@ $(window).on("load", function () {
       }
     });
   }
+
+  if ($(".swiper-inner").length) {
+    let swiperInner = new Swiper(".swiper-inner", {
+      loop: true,
+      breakpoints: {
+        0: {
+          slidesPerView: 1.2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2.8,
+          spaceBetween: 30,
+        },
+        1200: {
+          slidesPerView: 3.8,
+          spaceBetween: 30,
+        },
+      },
+    });
+  }
 });
