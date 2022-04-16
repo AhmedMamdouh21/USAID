@@ -2,6 +2,7 @@
 @import url(./select2.min.css);
 @import url(./select2-bootstrap-5-theme.min.css);
 @import url(./swiper-bundle.min.css);
+@import url(./fullcalendar.css);
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;500;700&display=swap');
 // Color Pallete
 $white: #FFFFFF;
@@ -2018,5 +2019,18 @@ textarea {
 .related-articles {
     .card-articles {
         height: 250px;
+    }
+}
+
+.events-calenda-name {
+    .info {
+        a {
+            color: $black;
+            transition: $transitionFast;
+
+            &:hover {
+                color: $blue;
+            }
+        }
     }
 }

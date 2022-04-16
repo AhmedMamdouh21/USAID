@@ -712,4 +712,101 @@ $(window).on("load", function () {
       },
     });
   }
+
+  // Add Full Calendar
+  let calendar = $("#calendar");
+
+  let bgEvent = {
+    id: -1,
+    start: null,
+    end: null,
+    rendering: "background",
+    backgroundColor: "orange",
+  };
+
+  calendar.fullCalendar({
+    header: {
+      left: "prev,next today",
+      center: "title",
+      right: "month,agendaWeek,agendaDay,listWeek",
+    },
+    // eventMouseover: function (event, jsEvent, view) {
+    //   console.log("in");
+    //   bgEvent.start = event.start;
+    //   bgEvent.end = event.end;
+    //   let events = calendar.fullCalendar("clientEvents", bgEvent.id);
+    //   if (events.length) {
+    //     let e = events[0];
+    //     calendar.fullCalendar("updateEvent", e);
+    //   } else calendar.fullCalendar("renderEvent", bgEvent);
+    // },
+    // eventMouseout: function (event, jsEvent, view) {
+    //   console.log("out");
+    //   calendar.fullCalendar("removeEvents", bgEvent.id);
+    // },
+    eventClick: function (event, jsEvent, view) {
+      console.log("===== eventClick =====");
+      console.log(event);
+      $(".fc-day-grid-event").attr("href", "events-name.html");
+    },
+    defaultDate: "2022-04-16",
+    editable: true,
+    eventLimit: true, // allow "more" link when too many events
+    events: [
+      {
+        title: "All Day Event",
+        start: "2022-04-01",
+      },
+      {
+        title: "Long Event",
+        start: "2022-04-07",
+        end: "2022-04-10",
+      },
+      {
+        id: 999,
+        title: "Repeating Event",
+        start: "2022-04-09T16:00:00",
+      },
+      {
+        id: 999,
+        title: "Repeating Event",
+        start: "2022-04-16T16:00:00",
+      },
+      {
+        title: "Conference",
+        start: "2022-04-05",
+        end: "2022-04-07",
+      },
+      {
+        title: "Meeting",
+        start: "2022-04-06T10:30:00",
+        end: "2022-04-06T12:30:00",
+      },
+      {
+        title: "Lunch",
+        start: "2022-04-06T12:00:00",
+      },
+      {
+        title: "Meeting",
+        start: "2022-04-06T14:30:00",
+      },
+      {
+        title: "Happy Hour",
+        start: "2022-04-06T17:30:00",
+      },
+      {
+        title: "Dinner",
+        start: "2022-04-06T20:00:00",
+      },
+      {
+        title: "Movie",
+        start: "2022-04-07T07:00:00",
+      },
+      {
+        title: "Click for Google",
+        url: "http://google.com/",
+        start: "2022-04-28",
+      },
+    ],
+  });
 });

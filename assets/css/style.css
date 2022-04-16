@@ -2,6 +2,7 @@
 @import url(./select2.min.css);
 @import url(./select2-bootstrap-5-theme.min.css);
 @import url(./swiper-bundle.min.css);
+@import url(./fullcalendar.css);
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;500;700&display=swap");
 /* Transition */
 /* Font Family */
@@ -2042,5 +2043,15 @@ textarea {
 /*** Related Articles ***/
 .related-articles .card-articles {
   height: 250px;
+}
+
+.events-calenda-name .info a {
+  color: #1D1D1D;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.events-calenda-name .info a:hover {
+  color: #002F6C;
 }
 /*# sourceMappingURL=style.css.map */
