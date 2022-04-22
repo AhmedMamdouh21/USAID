@@ -1,4 +1,4 @@
-@import url(./bootstrap.rtl.min);
+@import url(./bootstrap.rtl.min.css);
 @import url(./select2.min.css);
 @import url(./select2-bootstrap-5-theme.rtl.min.css);
 @import url(./swiper-bundle.min.css);
@@ -25,8 +25,8 @@ sans-serif;
 $fontTitle:'Lora',
 serif;
 /* Direction En */
-$start: left;
-$end: right;
+$start: right;
+$end:  left;
 
 // Colors
 .color-blue {
@@ -220,6 +220,8 @@ textarea {
         transition: $transitionFast;
         font-size: 22px;
         margin-#{$start}: 0.15rem;
+        // RTL
+        transform: rotate(180deg);
     }
 
     &.red {
@@ -2142,4 +2144,19 @@ a.fc-more {
 
 .fc-event-dot {
     background-color: $red;
+}
+
+// RTL ARROW 
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+    i {
+        transform: rotate(180deg);
+    }
+}
+
+.select2-container {
+    direction: rtl;
+}
+
+.select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option {
+    text-align: #{$start};
 }

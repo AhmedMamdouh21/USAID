@@ -713,3 +713,10 @@ $(window).on("load", function () {
     });
   }
 });
+
+if ($("html")[0].lang == "ar") {
+  // alert("ar");
+  $(".swiper").attr("dir", "rtl");
+} else {
+  $(".swiper").attr("dir", "");
+}
