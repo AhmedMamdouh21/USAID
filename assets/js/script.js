@@ -422,11 +422,13 @@ $(window).on("load", function () {
 
       const formData = new FormData(event.target);
       const asString = new URLSearchParams(formData).toString();
-      console.log(asString);
+      // console.log("asString", asString);
 
-      var currentURL = window.location.href + asString;
-      // console.log("currentURL", currentURL);
-      history.pushState({}, null, currentURL);
+      let currentURL = window.location.href;
+      let afterDomain = currentURL.substring(currentURL.lastIndexOf("/") + 1);
+      let beforeQueryString = afterDomain.split("?")[0];
+
+      history.pushState({}, null, beforeQueryString + "?" + asString);
       location.reload();
     }
 
