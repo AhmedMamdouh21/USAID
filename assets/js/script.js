@@ -413,6 +413,24 @@ $(window).on("load", function () {
       theme: "bootstrap-5",
       placeholder: $(this).data("placeholder"),
     });
+
+    // Handle Submit
+    const form = document.forms.filterJob;
+
+    function handleSubmit(event) {
+      event.preventDefault();
+
+      const formData = new FormData(event.target);
+      const asString = new URLSearchParams(formData).toString();
+      console.log(asString);
+
+      var currentURL = window.location.href + asString;
+      // console.log("currentURL", currentURL);
+      history.pushState({}, null, currentURL);
+      location.reload();
+    }
+
+    form.addEventListener("submit", handleSubmit);
   }
 
   // ARTICLES
