@@ -2160,3 +2160,59 @@ a.fc-more {
 .select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option {
     text-align: #{$start};
 }
+
+// MAP
+.map-svg {
+    max-width: 100% ;
+    height: auto;
+    display: block;
+
+    .active {
+        transition: $transitionFast;
+
+        &:hover {
+            fill: $red;
+        }
+    }
+
+    .enabled {
+        fill: $blue;
+        cursor: pointer;
+    }
+
+    .description {
+        pointer-events: none;
+        position: absolute;
+        font-size: 18px;
+        text-align: center;
+        background: $white;
+        padding: 10px 15px;
+        z-index: 5;
+        height: 30px;
+        line-height: 30px;
+        margin: 0 auto;
+        color: $blue;
+        border-radius: 5px;
+        box-shadow: 0 0 0 1px $offWhite;
+        transform: translateX(-50%);
+        display: none;
+
+        &.active {
+            display: flex;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            #{$start}: 50%;
+            top: 100%;
+            width: 0;
+            height: 0;
+            margin-#{$start}: -10px;
+            border-#{$start}: 10px solid transparent;
+            border-#{$end}: 10px solid transparent;
+            border-top: 10px solid $white;
+        }
+
+    }
+}

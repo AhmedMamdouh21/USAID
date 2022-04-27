@@ -732,6 +732,29 @@ $(window).on("load", function () {
       },
     });
   }
+
+  // MAP
+  if ($(".map-svg").length) {
+    $description = $(".description");
+
+    $(".enabled").hover(
+      function () {
+        $(this).attr("class", "enabled active");
+        $description.addClass("active");
+        $description.html($(this).attr("name"));
+      },
+      function () {
+        $description.removeClass("active");
+      }
+    );
+
+    $(document).on("mousemove", function (e) {
+      $description.css({
+        left: e.pageX,
+        top: e.pageY - 55,
+      });
+    });
+  }
 });
 
 if ($("html")[0].lang == "ar") {

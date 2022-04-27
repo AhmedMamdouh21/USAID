@@ -2147,4 +2147,63 @@ a.fc-more:hover {
 .select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option {
   text-align: right;
 }
+
+.map-svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.map-svg .active {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.map-svg .active:hover {
+  fill: #BA0C2F;
+}
+
+.map-svg .enabled {
+  fill: #002F6C;
+  cursor: pointer;
+}
+
+.map-svg .description {
+  pointer-events: none;
+  position: absolute;
+  font-size: 18px;
+  text-align: center;
+  background: #FFFFFF;
+  padding: 10px 15px;
+  z-index: 5;
+  height: 30px;
+  line-height: 30px;
+  margin: 0 auto;
+  color: #002F6C;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 0 1px #F9F9F9;
+          box-shadow: 0 0 0 1px #F9F9F9;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: none;
+}
+
+.map-svg .description.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.map-svg .description::after {
+  content: '';
+  position: absolute;
+  right: 50%;
+  top: 100%;
+  width: 0;
+  height: 0;
+  margin-right: -10px;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-top: 10px solid #FFFFFF;
+}
 /*# sourceMappingURL=style-rtl.css.map */
