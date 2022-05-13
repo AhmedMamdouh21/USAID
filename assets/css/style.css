@@ -3,7 +3,7 @@
 @import url(./select2-bootstrap-5-theme.min.css);
 @import url(./swiper-bundle.min.css);
 @import url(./fullcalendar.css);
-@import url("https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 /* Transition */
 /* Font Family */
 /* Direction En */
@@ -38,7 +38,7 @@ body {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   background-color: #F9F9F9;
   color: #1D1D1D;
@@ -113,7 +113,7 @@ body.open-menu .navbar .navbar-toggler .icon-close {
 
 /*** Fonts ***/
 .font-title, .btn_main {
-  font-family: "Lora", serif;
+  font-family: "Lato", sans-serif;
 }
 
 /*** Buttons ***/
@@ -2190,4 +2190,37 @@ a.fc-more:hover {
   border-right: 10px solid transparent;
   border-top: 10px solid #FFFFFF;
 }
+
+/* Start Scroll To Top */
+.backToTop {
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  color: #CBCBCB;
+  background-color: #002F6C;
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  z-index: 9999;
+  cursor: pointer;
+  -webkit-transform: translate3d(0, 25px, 0);
+          transform: translate3d(0, 25px, 0);
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+  font-size: 28px;
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.backToTop.show {
+  opacity: 1;
+  pointer-events: all;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+/* End Scroll To Top */
 /*# sourceMappingURL=style.css.map */

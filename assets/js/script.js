@@ -755,6 +755,25 @@ $(window).on("load", function () {
       });
     });
   }
+
+  // Scroll To Top
+  if ($(".backToTop").length) {
+    $(".backToTop").click(function (e) {
+      $("html, body").animate(
+        {
+          scrollTop: 0,
+        },
+        1200
+      );
+    });
+  }
+  $(document).scroll(function (e) {
+    if ($(window).scrollTop() >= 5) {
+      $(".backToTop").addClass("show");
+    } else {
+      $(".backToTop").removeClass("show");
+    }
+  });
 });
 
 if ($("html")[0].lang == "ar") {
