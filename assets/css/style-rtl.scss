@@ -996,6 +996,40 @@ textarea {
             }
         }
     }
+
+    .objectives {
+        .objectives-titles {
+            .title {
+                position: relative;
+                opacity: 0.6;
+                text-decoration: none;
+                &:hover {
+                    color: $blue;
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    top:auto;
+                    width: 0%;
+                    transition: $transitionFast;
+                    height: 3px;
+                    border-radius: 5px;
+                    background-color: $blue;
+                    @media (min-width: 992px)  {
+                        bottom: -1.595rem;
+                    }
+                }
+
+                &.active {
+                    opacity: 1;
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
 }
 
 /*** LATEST NEWS ***/

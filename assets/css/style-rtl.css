@@ -1036,6 +1036,43 @@ textarea {
           transform: scale3d(1.1, 1.1, 1.1);
 }
 
+.technical-approach .objectives .objectives-titles .title {
+  position: relative;
+  opacity: 0.6;
+  text-decoration: none;
+}
+
+.technical-approach .objectives .objectives-titles .title:hover {
+  color: #002F6C;
+}
+
+.technical-approach .objectives .objectives-titles .title::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  top: auto;
+  width: 0%;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  height: 3px;
+  border-radius: 5px;
+  background-color: #002F6C;
+}
+
+@media (min-width: 992px) {
+  .technical-approach .objectives .objectives-titles .title::after {
+    bottom: -1.595rem;
+  }
+}
+
+.technical-approach .objectives .objectives-titles .title.active {
+  opacity: 1;
+}
+
+.technical-approach .objectives .objectives-titles .title.active::after {
+  width: 100%;
+}
+
 /*** LATEST NEWS ***/
 .last-news {
   background-color: #FFFFFF;
