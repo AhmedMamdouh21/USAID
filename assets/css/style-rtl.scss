@@ -3,7 +3,7 @@
 @import url(./select2-bootstrap-5-theme.rtl.min.css);
 @import url(./swiper-bundle.min.css);
 @import url(./fullcalendar.css);
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
 // Color Pallete
 $white: #FFFFFF;
 $offWhite: #F9F9F9;
@@ -20,10 +20,8 @@ $black:#1D1D1D;
 $transitionFast: all 0.3s ease-in-out;
 $transitionSlow: all 0.6s ease-in-out;
 /* Font Family */
-$fontBody:'Roboto',
-sans-serif;
-$fontTitle:'Lora',
-serif;
+$fontBody:'Cairo', sans-serif;
+$fontTitle:'Cairo', sans-serif;
 /* Direction En */
 $start: right;
 $end:  left;
