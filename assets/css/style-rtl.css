@@ -547,6 +547,10 @@ textarea {
 }
 
 /*** NavBar ***/
+.navbar {
+  direction: ltr;
+}
+
 .navbar.navbar-fixed {
   background-color: #F9F9F9;
   z-index: 9999;
@@ -554,6 +558,10 @@ textarea {
 
 .navbar .navbar-brand {
   max-width: 140px;
+}
+
+.navbar .navbar-nav {
+  direction: rtl;
 }
 
 @media (min-width: 992px) {
@@ -683,7 +691,7 @@ textarea {
     top: 50%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
-    left: 0;
+    right: 0;
   }
 }
 
@@ -696,8 +704,8 @@ textarea {
   text-decoration: none;
   -webkit-transition: all 0.6s ease-in-out;
   transition: all 0.6s ease-in-out;
-  padding-left: 65px;
-  padding-right: 0;
+  padding-right: 65px;
+  padding-left: 0;
 }
 
 .navbar .container-search-box .search-box .search-btn .text-search {
@@ -705,7 +713,7 @@ textarea {
   transition: all 0.3s ease-in-out;
   opacity: 1;
   position: absolute;
-  left: 0;
+  right: 0;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -724,6 +732,7 @@ textarea {
   width: 0px;
   border-bottom: 2px solid #002F6C1A;
   border-radius: 0;
+  direction: rtl;
 }
 
 @media (min-width: 992px) {
@@ -732,7 +741,7 @@ textarea {
     padding: 0 6px;
   }
   .navbar .container-search-box .search-box:hover .search-btn {
-    padding-left: 0px;
+    padding-right: 0px;
     background-color: #002F6C;
     color: #FFFFFF;
   }
@@ -749,7 +758,7 @@ textarea {
     padding: 0 6px;
   }
   .navbar .container-search-box .search-box .search-btn {
-    padding-left: 0px;
+    padding-right: 0px;
     background-color: #002F6C;
     color: #FFFFFF;
   }
@@ -766,6 +775,8 @@ textarea {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   font-size: 14px;
+  margin-right: 0  !important;
+  margin-left: 1rem;
 }
 
 .navbar .change-lang:hover {

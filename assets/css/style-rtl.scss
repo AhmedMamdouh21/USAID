@@ -537,6 +537,7 @@ textarea {
 
 /*** NavBar ***/
 .navbar {
+    direction: ltr;
     &.navbar-fixed {
         background-color: $offWhite;
         z-index: 9999;
@@ -547,6 +548,7 @@ textarea {
     }
 
     .navbar-nav {
+        direction: rtl;
         @media (min-width: 992px) {
             border-bottom: 2px solid $blue-light;
         }
@@ -665,7 +667,7 @@ textarea {
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
-                #{$end}: 0;
+                #{$start}: 0;
 
             }
 
@@ -677,14 +679,14 @@ textarea {
                 border: none;
                 text-decoration: none;
                 transition: $transitionSlow;
-                padding-#{$end}: 65px;
-                padding-#{$start}: 0;
+                padding-#{$start}: 65px;
+                padding-#{$end}: 0;
 
                 .text-search {
                     transition: $transitionFast;
                     opacity: 1;
                     position: absolute;
-                    #{$end}: 0;
+                    #{$start}: 0;
                     top: 50%;
                     transform: translateY(-50%);
                     pointer-events: none;
@@ -702,6 +704,7 @@ textarea {
                 width: 0px;
                 border-bottom: 2px solid $blue-light;
                 border-radius: 0;
+                direction: rtl;
             }
 
             @media (min-width: 992px) {
@@ -712,7 +715,7 @@ textarea {
                     }
 
                     .search-btn {
-                        padding-#{$end}: 0px;
+                        padding-#{$start}: 0px;
                         background-color: $blue;
                         color: $white;
 
@@ -732,7 +735,7 @@ textarea {
                 }
 
                 .search-btn {
-                    padding-#{$end}: 0px;
+                    padding-#{$start}: 0px;
                     background-color: $blue;
                     color: $white;
 
@@ -751,7 +754,8 @@ textarea {
         color: $blue;
         transition: $transitionFast;
         font-size: 14px;
-
+        margin-right: 0  !important;
+        margin-left: 1rem;
         &:hover {
             color: $red;
         }
