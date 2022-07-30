@@ -1,9 +1,9 @@
 $(window).on("load", function () {
   const navBarHeight = $(".navbar-fixed").innerHeight();
   // if ($(".navbar-fixed").length) {
-  $(".padding-top").css({
-    "padding-top": navBarHeight + "px",
-  });
+  // $(".padding-top").css({
+  //   "padding-top": navBarHeight + "px",
+  // });
   // console.log("navBarHeight", navBarHeight);
   // }
   $(".navbar .navbar-toggler").on("click", function () {

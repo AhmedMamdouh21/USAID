@@ -138,8 +138,20 @@ body {
             }
         }
     }
+
+    &.modal-open {
+        .navbar-fixed {
+            z-index: 99;
+        }
+    }
 }
 
+.padding-top {
+    padding-top: 80px !important;
+    @media (max-width: 575.98px) {
+        padding-top: 60px !important;
+    }
+}
 /*** Fonts ***/
 
 .font-title {
@@ -1240,7 +1252,7 @@ textarea {
 
 .footer {
     background-color: $blue;
-
+    padding-top: 0 !important;
     .list {
         column-count: 3;
 

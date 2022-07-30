@@ -112,6 +112,20 @@ body.open-menu .navbar .navbar-toggler .icon-close {
   display: block;
 }
 
+body.modal-open .navbar-fixed {
+  z-index: 99;
+}
+
+.padding-top {
+  padding-top: 80px !important;
+}
+
+@media (max-width: 575.98px) {
+  .padding-top {
+    padding-top: 60px !important;
+  }
+}
+
 /*** Fonts ***/
 .font-title, .btn_main {
   font-family: "Cairo", sans-serif;
@@ -1299,6 +1313,7 @@ textarea {
 /*** Footer ***/
 .footer {
   background-color: #002F6C;
+  padding-top: 0 !important;
 }
 
 .footer .list {
