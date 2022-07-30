@@ -64,8 +64,7 @@ $(window).on("load", function () {
 
       $(".videoModal iframe").attr(
         "src",
-        "https://www.youtube.com/embed/" +
-          empededLink +
+          videosrc +
           "?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=1&autoplay=1"
       );
       console.log("videosrc", videosrc);
@@ -76,6 +75,7 @@ $(window).on("load", function () {
       $(".videoModal iframe").attr("src", "");
     });
   }
+  
   if ($(".media-videos").length) {
     playVideo();
   }
@@ -363,27 +363,22 @@ $(window).on("load", function () {
             postElement.classList.add("col-lg-4");
             postElement.innerHTML = `
 
-            
-            <div
-            videosrc="https://www.youtube.com/watch?v=DEEtSGusigQ"
-            class="card-videos p-3 mb-4 d-flex justify-content-center align-items-end overlay hvr-img-wrap media-videos"
-          >
-            <div class="play-icon main-title color-white">
-              <i class="bi bi-play-fill"></i>
-            </div>
-            <h3 class="card-title medium-title font-title font-bold">
-              CUM QUASI NATUS
-            </h3>
-            <div class="card-img hvr-img">
-              <img class="img-fit" src="${data[current_index].thumbnailUrl}" alt="" />
-            </div>
-          </div>
+            <a
+              href="${data[current_index].url}"
+              class="card-photo-gallery p-4  mb-5 d-flex align-items-end overlay hvr-img-wrap"
+            >
+              <h3 class="card-title medium-title font-title font-bold">
+               ${data[current_index].title}
+              </h3>
+              <div class="card-img hvr-img">
+                <img class="img-fit" src=" ${data[current_index].thumbnailUrl}" alt="" />
+              </div>
+            </a>
                       `;
             container.appendChild(postElement);
             console.log("data_url", postElement);
             current_index++;
             setTimeout(function () {
-              playVideo();
               loading.classList.remove("show");
             }, 200);
           }
