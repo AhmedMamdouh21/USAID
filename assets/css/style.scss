@@ -942,7 +942,7 @@ textarea {
 .our-goals {
     .card-our-goals {
         box-shadow: 0px 5px 20px #002F6C1A;
-
+        align-items: flex-end;
         @media (min-width: 1200px) {
             min-height: 70vh;
         }
@@ -965,6 +965,7 @@ textarea {
 
         .icon {
             max-width: 55px;
+            margin-bottom: 15px;
         }
 
         &:hover {

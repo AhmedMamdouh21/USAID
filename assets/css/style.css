@@ -970,6 +970,9 @@ textarea {
 .our-goals .card-our-goals {
   -webkit-box-shadow: 0px 5px 20px #002F6C1A;
           box-shadow: 0px 5px 20px #002F6C1A;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 @media (min-width: 1200px) {
@@ -999,6 +1002,7 @@ textarea {
 
 .our-goals .card-our-goals .icon {
   max-width: 55px;
+  margin-bottom: 15px;
 }
 
 .our-goals .card-our-goals:hover .bg-img {
