@@ -1223,6 +1223,7 @@ textarea {
   .partners .partners-video {
     height: 400px;
     margin-top: 4rem;
+    margin-bottom: -50px;
   }
 }
 
@@ -1230,6 +1231,7 @@ textarea {
   .partners .partners-video {
     height: 205px;
     margin-top: 3rem;
+    margin-bottom: -15px;
   }
 }
 
@@ -1313,7 +1315,6 @@ textarea {
 /*** Footer ***/
 .footer {
   background-color: #002F6C;
-  padding-top: 0 !important;
 }
 
 .footer .list {

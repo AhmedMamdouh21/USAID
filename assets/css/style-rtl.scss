@@ -1146,17 +1146,18 @@ textarea {
         }
     }
     .partners-video {
-
         position: relative;
         z-index: 1;
         @media (min-width: 576px) {
             height: 400px;
             margin-top: 4rem;
+            margin-bottom: -50px;
         }
 
         @media (max-width: 575.98px) {
             height: 205px;
             margin-top: 3rem;
+            margin-bottom: -15px;
 
         }
 
@@ -1252,7 +1253,6 @@ textarea {
 
 .footer {
     background-color: $blue;
-    padding-top: 0 !important;
     .list {
         column-count: 3;
 
